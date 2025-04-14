@@ -16,14 +16,6 @@ ifeq (${GOPATH},)
 $(error GOPATH is not set)
 endif
 
-ifeq (,$(wildcard ${GOPATH}/src))
-$(error Invalid GOPATH. There is no src dir in the GOPATH) 
-endif
-
-ifeq ($(findstring ${GOPATH},${CUR_DIR}), )
-$(error Wrong directorry for the project. It must be in $GOPATH/github/Percona-Lab/mysql_random_data_load)
-endif
-
 $(info )
 $(info GOPATH..........: ${GOPATH})
 $(info Build directory.: ${BIN_DIR})
